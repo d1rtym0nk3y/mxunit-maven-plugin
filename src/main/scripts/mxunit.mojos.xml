@@ -1,0 +1,72 @@
+<pluginMetadata>
+  <mojos>
+    <mojo>
+      <goal>run-tests</goal>
+      <call>run-tests</call>
+      <description>run mxunit tests</description>
+
+      <parameters>
+
+        <parameter>
+          <name>server</name> 
+          <property>server</property> 
+          <required>true</required> 
+          <expression>${server}</expression>
+          <defaultValue>localhost</defaultValue> 
+        </parameter>
+
+        <parameter>
+          <name>port</name> 
+          <property>port</property> 
+          <required>true</required> 
+          <expression>${port}</expression>
+          <defaultValue>80</defaultValue> 
+        </parameter>
+
+        <parameter>
+          <name>outputdir</name> 
+          <property>outputdir</property> 
+          <required>true</required> 
+          <expression>${outputdir}</expression>
+        </parameter>
+
+        <parameter>
+          <name>verbose</name> 
+          <property>verbose</property> 
+          <required>true</required> 
+          <defaultValue>true</defaultValue>
+          <expression>${verbose}</expression>
+        </parameter>
+
+        <parameter>
+          <name>runner</name> 
+          <property>runner</property> 
+          <required>true</required> 
+          <expression>${runner}</expression>
+        </parameter>
+
+        <parameter>
+          <name>path</name> 
+          <property>path</property> 
+          <required>true</required> 
+          <expression>${path}</expression>
+        </parameter>
+
+        <parameter>
+          <name>recurse</name> 
+          <property>recurse</property> 
+          <required>true</required> 
+          <expression>${recurse}</expression>
+        </parameter>
+
+        <parameter>
+          <name>cfcpath</name> 
+          <property>cfcpath</property> 
+          <required>true</required> 
+          <expression>${cfcpath}</expression>
+        </parameter>     
+        
+      </parameters>      
+    </mojo>
+  </mojos>
+</pluginMetadata>

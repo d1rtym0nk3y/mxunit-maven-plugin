@@ -1,0 +1,13 @@
+<project>
+	<taskdef name="mxunittask" classname="org.mxunit.ant.MXUnitAntTask" />
+	<target name="run-tests">
+		<echo>running mxunit tests</echo>
+		<mxunittask server="${server}" port="${port}" 
+			outputdir="${outputdir}" verbose="${verbose}" failureproperty="hasfailure" errorproperty="haserror">
+			<directory runner="${runner}" path="${path}" recurse="${recurse}" componentPath="${cfcpath}" />
+		</mxunittask>
+		<fail if="haserror" message="Failing the build an error occured running mxunit tests"/>		
+		<fail if="hasfailure" message="Failing the build because one or more mxunit tests failed"/>
+	</target>
+
+</project>

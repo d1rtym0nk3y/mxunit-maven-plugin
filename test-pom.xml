@@ -1,0 +1,45 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+   
+  <groupId>test</groupId>
+  <artifactId>test</artifactId>
+  <version>0.1</version>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+<!--
+  <dependencies>
+    <dependency>
+      <groupId>org.mxunit</groupId>
+      <artifactId>mxunit</artifactId>
+      <version>1.0</version>
+    </dependency>
+  </dependencies>
+-->  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.mxunit</groupId>
+        <artifactId>mxunit</artifactId>
+        <executions>
+          <execution>
+            <phase>integration-test</phase>
+            <goals>
+              <goal>run-tests</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <server>localhost</server>
+          <outputdir>f:/</outputdir>
+          <verbose>true</verbose>
+          <runner>/tests/HttpAntRunner.cfc</runner>
+          <path>/tests/unit</path>
+          <recurse>true</recurse>
+          <cfcpath>tests.unit</cfcpath>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
