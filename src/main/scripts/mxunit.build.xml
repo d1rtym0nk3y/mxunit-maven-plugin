@@ -2,6 +2,7 @@
 	<taskdef name="mxunittask" classname="org.mxunit.ant.MXUnitAntTask" />
 	<target name="run-tests">
 		<echo>running mxunit tests</echo>
+		<mkdir dir="${outputdir}" />
 		<mxunittask server="${server}" port="${port}" 
 			outputdir="${outputdir}" verbose="${verbose}" failureproperty="hasfailure" errorproperty="haserror">
 			<directory runner="${runner}" path="${path}" recurse="${recurse}" componentPath="${cfcpath}" />

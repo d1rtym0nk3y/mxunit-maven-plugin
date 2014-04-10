@@ -8,20 +8,15 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-<!--
-  <dependencies>
-    <dependency>
-      <groupId>org.mxunit</groupId>
-      <artifactId>mxunit</artifactId>
-      <version>1.0</version>
-    </dependency>
-  </dependencies>
--->  
+
   <build>
+
+
     <plugins>
+
       <plugin>
-        <groupId>org.mxunit</groupId>
-        <artifactId>mxunit</artifactId>
+        <groupId>net.m0nk3y</groupId>
+        <artifactId>maven-mxunit-plugin</artifactId>
         <executions>
           <execution>
             <phase>integration-test</phase>
@@ -32,7 +27,8 @@
         </executions>
         <configuration>
           <server>localhost</server>
-          <outputdir>f:/</outputdir>
+          <port>80</port>
+          <outputdir>${project.build.directory}/mxunit</outputdir>
           <verbose>true</verbose>
           <runner>/tests/HttpAntRunner.cfc</runner>
           <path>/tests/unit</path>
@@ -40,6 +36,23 @@
           <cfcpath>tests.unit</cfcpath>
         </configuration>
       </plugin>
+
     </plugins>
   </build>
+
+
+  <repositories>
+
+    <repository>
+        <id>net.m0nk3y</id>
+        <url>http://repo.m0nk3y.net/</url>
+        <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+        </snapshots>
+    </repository>    
+
+
+  </repositories>
+
 </project>
